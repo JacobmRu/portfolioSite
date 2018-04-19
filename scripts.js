@@ -8,7 +8,7 @@ function fadeIn() {
 	y = window.scrollY;
 	x = window.innerHeight;
 	mod = y / x;
-	console.log(mod);
+	//console.log(mod);
 
 	if(mod >= .7) {
 		text.style.opacity = 0;
@@ -27,17 +27,36 @@ function getScroll() {
 	y = window.scrollY;
 	x = window.innerHeight;
 	mod = y / x;
-	mod = Math.floor(mod * 10) / 10
+    mod = Math.floor(mod * 10) / 10;
 	//console.log(`linear-gradient(to top, rgba(0, 0, 0,0), rgba(${Math.floor(mod * 66)}, ${Math.floor(mod * 134)}, ${Math.floor(mod * 244)},1))`);
 	updateColor();
 }
 
 function updateColor() {
-	var filter = document.getElementById('filter');
-	filter.style.background = `linear-gradient(to top, rgba(0, 0, 0,0), rgba(${Math.floor(mod * 66)}, ${Math.floor(mod * 134)}, ${Math.floor(mod * 244)},1))`;
+    /* Current chosen colors are 
+    rgb(66,134,244), rgb(110,255,255), rgb(255,150,50) 
+    mod is scroll position from 0 - 3
+    formula is previousMaxValue +/- (modReducedTo(0-1) * newDesiredValue) */
+    var filter = document.getElementById('filter');
+
+    if(mod < 1) {
+        //console.log("R: " + Math.floor(mod * 66));
+        filter.style.background = `linear-gradient(to bottom, rgba(0, 0, 0,0), rgba(${Math.floor(mod * 66)}, ${Math.floor(mod * 134)}, ${Math.floor(mod * 244)},1))`;
+    }
+    else if(mod < 2) {
+        //console.log("R: " + (66 + Math.floor((mod - 1) * 44)));
+        filter.style.background = `linear-gradient(to bottom, rgba(0, 0, 0,0), rgba(${66 + Math.floor((mod - 1) * 44)}, ${134 + Math.floor((mod - 1) * 121)}, ${244 + Math.floor((mod - 1) * 11)},1))`;
+    }
+    else {
+        //console.log("R: " + (110 + Math.floor((mod - 2) * 145)));
+        filter.style.background = `linear-gradient(to bottom, rgba(0, 0, 0,0), rgba(${110 + Math.floor((mod - 2) * 145)}, ${255 - Math.floor((mod - 2) * 105)}, ${255 - Math.floor((mod - 2) * 205)},1))`;
+    }
+
+
+	//filter.style.background = `linear-gradient(to bottom, rgba(0, 0, 0,0), rgba(${Math.floor(mod * 66)}, ${Math.floor(mod * 134)}, ${Math.floor(mod * 244)},1))`;
 }
 
-/* This code is used to replicate scroll-behavior:smooth on unsuported browsers
+/* This code is used to replicate scroll-behavior:smooth on unsupported browsers
 Used with permission from itnewb.com via stackoverflow answer
 TODO: migrate to a smoothscroll polyfill module from npm */
 

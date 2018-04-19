@@ -10,39 +10,48 @@
 </head>
 <body>
 	<div id="filter">
-		<img src="heroLarge.jpg" alt="wood grain" id="hero">
+		<div id="hero"></div>
 	</div>		
 	<nav>
 		<ul>
-			<li id="home"><a href="#main" class="smooth"><i class="fas fa-home"></i></a></li>
-			<li id="about"><a href="#aboutSec"  class="smooth"><i class="far fa-user"></i></a></li>
-			<li id="portfolio"><a href="#portfolioSec"  class="smooth"><i class="far fa-folder-open"></i></a></li>
-			<li id="contact"><a href="#contactSec" class="smooth"><i class="far fa-address-card"></i></a></li>
-			<li id="git"><a href="#"><i class="fab fa-github"></i></a></li>
+			<li id="home"><a href="#main" class="smooth"><i class="icon fas fa-home"></i><span class="navText">HOME</span></a></li>
+			<li id="about"><a href="#aboutSec"  class="smooth"><i class="icon far fa-user"></i><span class="navText">ABOUT</span></a></li>
+			<li id="portfolio"><a href="#portfolioSec"  class="smooth"><i class="icon far fa-folder-open"></i><span class="navText">PROJECTS</span></a></li>
+			<li id="contact"><a href="#contactSec" class="smooth"><i class="icon far fa-address-card"></i><span class="navText">CONTACT</span></a></li>
+			<li id="git"><a href="#"><i class="icon fab fa-github"></i><span class="navText">GIT</span></a></li>
+			<li id="linked"><a href="#"><i class="icon fab fa-linkedin"></i><span class="navText">LINKEDIN</span></a></li>
 		</ul>
 	</nav>
 	<section id="main">	
 		<div id="heroInner">			
 			<h1 id="firstName"><span class="title"><span class="cap">J</span><span class="lower">acob</span></span></h1>
 			<h1 id="lastName"><span class="title"><span class="cap">R</span><span class="lower">ussell</span></span></h1>
-			<h3 id="subtitle" class="title">Web Developer</h3>			
+			<h3 id="subtitle" class="title">Web Developer</h3>	
+			<h3 id="chevron"><a href="#aboutSec"  class="smooth"><i class="fas fa-chevron-down"></i></a></h3>
 		</div>
 	</section>
 	<section id="aboutSec">		
-		<h1>About Me</h1>
-		<div class="underline"></div>
-		<p>content</p>						
+		<h1>About Me
+			<span class="underline"></span>
+		</h1>
+		<p>Lorem ipsum dolor sit amet, modus detraxit voluptaria est in, eum eu perfecto conceptam. Paulo sanctus nostrum no cum. Et audiam latine ius. Ignota vivendum sed ex, his at moderatius reprehendunt, sit debet altera ancillae id. Eu mei feugiat tibique. No mazim eleifend theophrastus eos, quo laudem copiosae ea.</p>
+		
+		<p>Lorem ipsum dolor sit amet, modus detraxit voluptaria est in, eum eu perfecto conceptam. Paulo sanctus nostrum no cum. Et audiam latine ius. Ignota vivendum sed ex, his at moderatius reprehendunt, sit debet altera ancillae id. Eu mei feugiat tibique. No mazim eleifend theophrastus eos, quo laudem copiosae ea.</p>
 	</section>
 	<section id="portfolioSec">
-		<h1>Portfolio</h1>
-		<div class="underline"></div>
+		<h1>Portfolio
+			<span class="underline"></span>
+		</h1>
 		<p>content</p>
 	</section>
 	<section id="contactSec">
-		<h1>Contact Me</h1>
-		<div class="underline"></div>
-		<p>content</p>
+		<h1>Contact Me
+			<span class="underline"></span>
+		</h1>
+		<p>
+			You can email me at Jacobm.Ru@gmail.com
+		</p>
 	</section>
+	<script src="scripts.js"></script>
 </body>
-<script src="scripts.js"></script>
 </html>
