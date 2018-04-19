@@ -5,21 +5,42 @@ body, html {
 
 a {
 	text-decoration: none;
+	color: black;
+}
+
+a:hover {
+	color: black;
+	text-decoration: none;
 }
 
 body {
 	--background: linear-gradient(to bottom, rgba(66, 134, 244,0), rgba(66, 134, 244,1));
-	scroll-behavior: smooth;
+	--scroll-behavior: smooth;
 }
 
 #filter {
-	--background-color: green;
+	--filter: blur(1px);
 	height: 100%;
 	width: 100%;
 	position: fixed;
-	--background: linear-gradient(to top, rgba(66, 134, 244,0), rgba(66, 134, 244,1));
-	background: linear-gradient(to top, rgba(0, 0, 0,0), rgba(0, 0, 0,1));
+	--background: linear-bottom(to top, rgba(255, 255, 255,0), rgba(255, 255, 255,1));
+	background: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0, 1));
 }
+
+/*
+This was used when I was using an img background
+#hero {
+	position: fixed;
+	left: 0;
+	height: 100%;
+	min-height: 100vh;
+	min-width: 100%;
+	width: auto; 
+	filter: contrast(150%);
+	opacity: .75;
+	background-color: grey;
+	--border-bottom: 4px solid black;
+} */
 
 #hero {
 	position: fixed;
@@ -28,30 +49,39 @@ body {
 	min-height: 100vh;
 	min-width: 100%;
 	width: auto; 
-	filter: contrast(100%);
-	opacity: .75;
-	background-color: grey;
-	--border-bottom: 4px solid black;
+	
+	/* background by SVGBackgrounds.com */
+	background-color: #ffffff;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg fill-opacity='0.49'%3E%3Cpolygon fill='%23dbdbdb' points='800%2C100 0%2C200 0%2C800 1600%2C800 1600%2C200'/%3E%3Cpolygon fill='%23b6b6b6' points='800%2C200 0%2C400 0%2C800 1600%2C800 1600%2C400'/%3E%3Cpolygon fill='%23929292' points='800%2C300 0%2C600 0%2C800 1600%2C800 1600%2C600'/%3E%3Cpolygon fill='%236d6d6d' points='1600%2C800 800%2C400 0%2C800'/%3E%3Cpolygon fill='%23494949' points='1280%2C800 800%2C500 320%2C800'/%3E%3Cpolygon fill='%23242424' points='533.3%2C800 1066.7%2C800 800%2C600'/%3E%3Cpolygon fill='%23000000' points='684.1%2C800 914.3%2C800 800%2C700'/%3E%3C/g%3E%3C/svg%3E");
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
+
+	opacity: .5;
 }
+
 #heroInner {
 	position: absolute;
 	--background-color: grey;
 	width: 100%;
 	color: black;
     text-decoration: none;
-    padding-top: 20vh;	
+    padding-top: 16vh;	
 }
 
 nav {	
+	font-family: garmond, sans-serif;
+	font-weight: 800;
 	text-align: center;
 	position: fixed;
-	background-color: rgba(0, 0, 0, .8);	
+	background-color: black;	
 	height: 100vh;
-	width: 15vw;
-	max-width: 5em;
-	min-width: 4em;
+	width: 5em; /*was 15vw*/
+	--max-width: 5em;
+	--min-width: 5em;
 	--left: 8%; 
 	z-index: 10;
+	opacity: .9;
 }
 
 
@@ -62,6 +92,7 @@ ul {
 	display: flex; 
 	flex-direction: column; 
 	justify-content: space-evenly; 
+	list-style: none;
 }
 
 li  a{
@@ -69,45 +100,71 @@ li  a{
 	font-size: 2.5em;
 	color: white;
 	margin: 0; 
+	--opacity: .7;
+}
+
+nav li a {
+	transition: all .5s;
 }
 
 #home {
-	margin: 1em 0 25vh 0;
+	--margin: 1em 0 25vh 0;
 }
 
-#home a:hover {
+nav:hover #home a {
 	color: grey;
 }
 
 #about {
-	margin-bottom: .5em;
+	margin-bottom: 1.3em;
 }
 
-#about a:hover{
-	color: blue;
+nav:hover #about a{
+	color: rgba(66, 134, 244,1);
 }
 
 #portfolio {
-	margin-bottom: .5em;
+	margin-bottom: 1.3em;
 }
 
-#portfolio a:hover {
-	color: green;
+nav:hover #portfolio a {
+	color: rgb(110, 255, 255);
 }
 
-#contact a:hover {
-	color: red;
+nav:hover #contact a {
+	color: rgb(255, 150, 50);
 }
 
 #git {
-	margin-top: auto;
+	--margin-top: auto;
 	margin-bottom: 1em;
 }
 
-#git a:hover {
-	--margin-top: auto;
-	--margin-bottom: 7em;
-	color: purple;
+nav:hover #git a {
+	color: #913399;
+}
+
+#linked {
+	margin-bottom: 1.5em;
+}
+
+nav:hover #linked a {
+	color: #0077b5;
+}
+
+li .icon:hover  ~ .navText {
+	right: 0;	
+}
+
+.navText {
+	margin-top: -1em;
+	position: relative;
+	top: .5em;
+	right: 10em;
+	display: block;
+	font-size: .25em;
+	transition: .35s all;
+	color: white;
 }
 
 h1 {
@@ -166,6 +223,31 @@ h1 {
 	letter-spacing: 10px;
 }
 
+#chevron {
+	display: inline-block;
+	width: 1.5em;
+	height: 1.5em;
+	margin-top: 35vh;
+	--margin-left: 80px;
+	font-size: 3em;
+	color: black;
+	
+	animation: bounce 0.7s;
+    animation-direction: alternate;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+	transition: all .5s;
+}
+
+@keyframes bounce {
+  from { transform: translate(0, 0);     }
+  to   { transform: translate(0, 15px); }
+}
+
+#chevron:hover {
+	font-size: 4.5em;
+}
+
 section {
 	min-height: 100vh;
 	position: relative;
@@ -177,11 +259,22 @@ section {
 }
 
 section:not(#main) {
-	padding: 4.5em 0 0 10em;
+	padding: 2.5em 0 0 6em;
 }
 
 .underline {
-	width: 40vw;
-	height: 3px;
+	display: block;
+	width: 80%;
+	height: 2px;
 	background-color: black;
 }
+
+section:not(#main) p {
+	margin-top: 3.5em;
+	line-height: 2em;
+	width: 75%;
+}
+
+
+
+
