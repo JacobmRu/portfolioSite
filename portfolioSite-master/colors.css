@@ -1,0 +1,37 @@
+/* What's Happening */
+
+home {
+    background-color: rgba(0, 0, 0, 1)
+}
+
+about {
+    background-color: rgba(66, 134, 244, 1)
+}
+
+portfolio {
+    background-color: rgba(132, 255, 255, 1)
+}
+
+contact {
+    background-color: rgba(198, 255, 255, 1)
+}
+
+/* What I want to happen */
+
+home {
+    background-color: rgba(0, 0, 0, 1)
+}
+
+about {
+    background-color: rgba(66, 134, 244, 1)
+}
+
+portfolio {
+    background-color: rgba(110, 255, 255, 1)
+}
+
+contact {
+    background-color: rgba(255, 150, 50, 1)
+}
+
+/* Maybe just some combination of 255, 150, 50? */
