@@ -267,7 +267,7 @@ section:not(#main) {
 
 }
 
-#portfolioSec li a:hover {
+#portfolioSec li a:hover, #resume:hover {
 	color:  rgba(255, 150, 50, 1);
 }
 
