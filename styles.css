@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 body, html {
 	height: 100%;
 	font-family: 'Martel', serif;
@@ -15,35 +14,22 @@ a:hover {
 }
 
 #filter {
-	--filter: blur(1px);
 	height: 100%;
 	width: 100%;
+	max-width: 100vw;
 	position: fixed;
+	left: 0;
 	z-index: 0;
 	background: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0, 1));
 }
 
-/*
-This was used when I was using an img background
 #hero {
 	position: fixed;
 	left: 0;
 	height: 100%;
-	min-height: 100vh;
-	min-width: 100%;
-	width: auto; 
-	filter: contrast(150%);
-	opacity: .75;
-	background-color: grey;
-	--border-bottom: 4px solid black;
-} */
-
-#hero {
-	position: fixed;
-	left: 0;
-	height: 100%;
-	min-width: 100%;
-	width: auto; 
+	width: 100%;
+	max-width: 100vw;
+	--width: auto; 
 	
 	/* background by SVGBackgrounds.com */
 	background-color: #ffffff;
@@ -148,13 +134,20 @@ h1 {
 	font-size: 3em;
 }
 
+#main {
+	display: flex;
+	justify-content: center;
+	transition: all 2s;
+}
+
 #heroInner {
 	position: absolute;
-	width: 100%;
+	width: 80%;
 	color: black;
     text-decoration: none;
     padding-top: 10em;
 	text-align: center;
+	overflow: hidden;
 }
 
 .cap {
@@ -196,14 +189,11 @@ h1 {
 
 .title:hover {
 	letter-spacing: 10px;
-}
+} 
 
 #chevron {
 	position: relative;
 	display: block;
-	width: 1.5em;
-	height: 1.5em;
-	margin: auto;
 	top: 80vh;
 	font-size: 3em;
 	color: black;
@@ -227,11 +217,6 @@ h1 {
 section {
 	min-height: 100vh;
 	position: relative;
-}
-
-#main {
-	text-align: center;
-	transition: all 2s;
 }
 
 section:not(#main) {
@@ -274,12 +259,16 @@ section:not(#main) {
 }
 
 #portfolioSec h3 {
-	font-size: 1.3em;
-	text-decoration: underline;
+	font-size: 1.5em;
 }
 
-li a:hover {
-	color: orange;
+.linkon {
+	font-size: .45em;
+
+}
+
+#portfolioSec li a:hover {
+	color:  rgba(255, 150, 50, 1);
 }
 
 #tuned h3 {
@@ -304,403 +293,45 @@ li a:hover {
 	flex-wrap: wrap;
 	margin-bottom: 3em;
 	width: 70%;
+
+
+	background-color: rgba(0, 0, 0, .2);
+	border: 2px solid black;
+	border-radius: 10px;
 }
 
 #strongList li {
 	width: 40%;
-	margin: .5em .5em;
+	margin: .5em 1em .5em 0em;
 }
 
 #devList li {
+	min-width: 10em;
 	width: 25%;
-	margin: .5em .5em;
+	margin: .5em 1em .5em 0em;
 }
 
-@media only screen and (max-width : 850px) {
-	nav {	
-		margin: 0;
-		height: 5em;
-		width: 100%;
-		bottom: 0; 
-		right: 0;
-		opacity: 1;
-	}
+/* Contact Styling */
 
-	nav ul {
-		flex-direction: row; 
-	}
-
-	#home a {
-		color: grey;
-	}
-
-	#about a{
-		color: rgba(66, 134, 244,1);
-	}
-
-	#portfolio a {
-		color: rgb(110, 255, 255);
-	}
-
-	#contact a {
-		color: rgb(255, 150, 50);
-	}
-
-	#git {
-		display: none;
-	}
-
-	#linked {
-		display: none;
-	}
-
-	.navText {
-		right: 0;
-		display: block;
-	}
-	
-	section:not(#main) {
-		padding-left: 2em;
-	}
-		
-	#chevron {
-		top: 75vh;
-	}
-
-	#contactSec {
-		height: 110vh;
-	}
+#contactSec h1 {
+	margin-bottom: 1.75em;
 }
 
-@media only screen and (max-width : 350px) {
-	body{
-		font-size: .8em;
-	}
-}
-
-
-=======
-body, html {
-	height: 100%;
-	font-family: 'Martel', serif;
-}
-
-a {
-	text-decoration: none;
-	color: black;
-}
-
-a:hover {
-	color: black;
-	text-decoration: none;
-}
-
-#filter {
-	--filter: blur(1px);
-	height: 100%;
-	width: 100%;
-	position: fixed;
-	z-index: 0;
-	background: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0, 1));
-}
-
-/*
-This was used when I was using an img background
-#hero {
-	position: fixed;
-	left: 0;
-	height: 100%;
-	min-height: 100vh;
-	min-width: 100%;
-	width: auto; 
-	filter: contrast(150%);
-	opacity: .75;
-	background-color: grey;
-	--border-bottom: 4px solid black;
-} */
-
-#hero {
-	position: fixed;
-	left: 0;
-	height: 100%;
-	min-width: 100%;
-	width: auto; 
-	
-	/* background by SVGBackgrounds.com */
-	background-color: #ffffff;
-	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg fill-opacity='0.49'%3E%3Cpolygon fill='%23dbdbdb' points='800%2C100 0%2C200 0%2C800 1600%2C800 1600%2C200'/%3E%3Cpolygon fill='%23b6b6b6' points='800%2C200 0%2C400 0%2C800 1600%2C800 1600%2C400'/%3E%3Cpolygon fill='%23929292' points='800%2C300 0%2C600 0%2C800 1600%2C800 1600%2C600'/%3E%3Cpolygon fill='%236d6d6d' points='1600%2C800 800%2C400 0%2C800'/%3E%3Cpolygon fill='%23494949' points='1280%2C800 800%2C500 320%2C800'/%3E%3Cpolygon fill='%23242424' points='533.3%2C800 1066.7%2C800 800%2C600'/%3E%3Cpolygon fill='%23000000' points='684.1%2C800 914.3%2C800 800%2C700'/%3E%3C/g%3E%3C/svg%3E");
-	background-attachment: fixed;
-	background-size: cover;
-	background-position: center;
-
-	opacity: .5;
-}
-
-nav {	
-	font-family: garmond, sans-serif;
-	font-weight: 800;
-	text-align: center;
-	position: fixed;
-	background-color: black;	
-	height: 100%;
-	width: 5em; /*was 15vw*/
-	z-index: 10;
-	opacity: .9;
-}
-
-
-nav ul {
-	opacity: .75;
-	padding: 0; 
-	height: 100%; 
-	display: flex; 
-	flex-direction: column; 
-	justify-content: space-around; 
+#contactSec li {
 	list-style: none;
-}
-
-nav li  a{
-	list-style: none;
-	font-size: 2.5em;
-	color: white;
-	margin: 0; 
-}
-
-nav li a {
-	transition: all .5s;
-}
-
-nav:hover #home a {
-	color: grey;
-}
-
-#about {
-	margin-bottom: 1.3em;
-}
-
-nav:hover #about a{
-	color: rgba(66, 134, 244,1);
-}
-
-#portfolio {
-	margin-bottom: 1.3em;
-}
-
-nav:hover #portfolio a {
-	color: rgb(110, 255, 255);
-}
-
-nav:hover #contact a {
-	color: rgb(255, 150, 50);
-}
-
-#git {
+	font-size: 2em;
 	margin-bottom: 1em;
 }
 
-nav:hover #git a {
-	color: #913399;
-}
-
-#linked {
-	margin-bottom: 1.5em;
-}
-
-nav:hover #linked a {
-	color: #0077b5;
-}
-
-li .icon:hover  ~ .navText {
-	right: 0;	
-}
-
-.navText {
-	margin-top: -1em;
-	position: relative;
-	top: .5em;
-	right: 10em;
-	display: block;
-	font-size: .25em;
-	transition: .35s all;
-	color: white;
-}
-
-h1 {
-	font-size: 3em;
-}
-
-#heroInner {
-	position: absolute;
-	width: 100%;
-	color: black;
-    text-decoration: none;
-    padding-top: 10em;
-	text-align: center;
-}
-
-.cap {
-	font-size: 3em;
-	display: inline;
-	line-height: 0;
-}
-
-.lower {
-	display: inline;
-}
-
-
-#firstName {
-	position: relative;
-	display: block;
-	right: .8em;
-	z-index: 5;
-}
-
-#lastName {
-	position: relative;
-	display: block;
-	z-index: 0;
-	left: .8em;
-	padding-top: 1.25em;
-}
-
-#subtitle {
-	position: relative;
-	z-index: 5;
-	display: block;
-}
-
-.title {
-	transition: all 1s;
-	cursor: default;
-}
-
-.title:hover {
-	letter-spacing: 10px;
-}
-
-#chevron {
-	position: relative;
-	display: block;
-	width: 1.5em;
-	height: 1.5em;
-	margin: auto;
-	top: 80vh;
-	font-size: 3em;
-	color: black;
-	
-	animation: bounce 0.7s;
-    animation-direction: alternate;
-    animation-timing-function: ease-in;
-    animation-iteration-count: infinite;
-	transition: all .5s;
-}
-
-@keyframes bounce {
-  from { transform: translate(0, 0);     }
-  to   { transform: translate(0, 15px); }
-}
-
-#chevron:hover {
-	font-size: 4.5em;
-}
-
-section {
-	min-height: 100vh;
-	position: relative;
-}
-
-#main {
-	text-align: center;
-	transition: all 2s;
-}
-
-section:not(#main) {
-	padding: 2.5em 0 0 6em;
-}
-
-.underline {
-	display: block;
-	width: 90%;
-	height: 2px;
-	background-color: black;
-}
-
-/* About Me Styling */
-
-#aboutSec p {
-	line-height: 2em;
-	width: 75%;
-}
-
-#aboutSec p:first-of-type {
-	margin-top: 3.5em;
-}
-
-
-/* Portfolio Styling */
-
-#portfolioSec ul {
-	list-style: none;
-	width: 90%;
-}
-
-#portfolioSec h2 + ul { 
-	list-style: none;
-	margin-top: 2em;
-}
-
-#portfolioSec h2 {
-	margin: 1em 0 1.75em 0;
-}
-
-#portfolioSec h3 {
-	font-size: 1.3em;
-	text-decoration: underline;
-}
-
-li a:hover {
-	color: orange;
-}
-
-#tuned h3 {
-	text-decoration: none;
-	margin: 5em 0 -2em 0;
-}
-
-#lineBreak {
-	height: 3px;
-	opacity: .6;
-	background-color: black;
-	width: 85%;
-	margin: 5em auto 5em auto;
-	
-}
-
-/* Skills Styling */
-#skillsul ul {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
-	flex-wrap: wrap;
-	margin-bottom: 3em;
-	width: 70%;
-}
-
-#strongList li {
-	width: 40%;
-	margin: .5em .5em;
-}
-
-#devList li {
-	width: 25%;
-	margin: .5em .5em;
+#contactSec li a:hover {
+	color:  rgba(66, 134, 244, .7);
 }
 
 @media only screen and (max-width : 850px) {
 	nav {	
 		margin: 0;
-		height: 5em;
+		height: 8vh;
+		min-height: 5em;
 		width: 100%;
 		bottom: 0; 
 		right: 0;
@@ -709,6 +340,7 @@ li a:hover {
 
 	nav ul {
 		flex-direction: row; 
+		padding-right: 1em;
 	}
 
 	#home a {
@@ -751,13 +383,23 @@ li a:hover {
 	#contactSec {
 		height: 110vh;
 	}
+
+	#contactSec li {
+		list-style: none;
+		font-size: 1.2em;
+		margin-bottom: 1em;
+		white-space: nowrap;
+	}
+
+	#contactSec ul {
+		padding-left: 0;
+	}
 }
 
-@media only screen and (max-width : 350px) {
+@media only screen and (max-width : 400px) {
 	body{
 		font-size: .8em;
 	}
 }
 
 
->>>>>>> origin/master
